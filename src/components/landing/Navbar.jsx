@@ -50,7 +50,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-body font-medium text-foreground/80 hover:text-primary transition-colors duration-300 tracking-wide uppercase"
+              className="text-sm font-body font-medium text-foreground/80 hover:text-(--primary) transition-colors duration-300 tracking-wide uppercase"
             >
               {link.label}
             </a>
@@ -80,7 +80,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-base font-body font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide"
+                  className="text-base font-body font-medium text-foreground/80 hover:text-(--primary) transition-colors uppercase tracking-wide"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

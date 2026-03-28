@@ -47,9 +47,9 @@ export default function MenuSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-px bg-primary/50" />
+            <div className="w-12 h-px bg-(--primary)/80" />
             <Flame className="w-5 h-5 text-(--primary)" />
-            <div className="w-12 h-px bg-primary/50" />
+            <div className="w-12 h-px bg-(--primary)/80" />
           </div>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
             Nuestro <span className="text-(--primary) italic">Menú</span>
@@ -69,7 +69,7 @@ export default function MenuSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
-              className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500"
+              className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-(--primary)/30 transition-all duration-500"
             >
               <div className="relative h-64 md:h-72 overflow-hidden">
                 <img
@@ -80,7 +80,7 @@ export default function MenuSection() {
                 <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent" />
               </div>
               <div className="p-6 md:p-8">
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground group-hover:text-(--primary) transition-colors duration-300">
                   {item.title}
                 </h3>
                 <p className="font-body text-muted-foreground mt-3 leading-relaxed">
