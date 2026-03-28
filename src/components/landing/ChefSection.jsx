@@ -15,7 +15,7 @@ export default function ChefSection() {
   return (
     <section id="nosotros" className="py-24 md:py-32 px-6 bg-card">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:gap-20 items-center">
           
           {/* Columna de Imagen */}
           <motion.div
@@ -29,7 +29,7 @@ export default function ChefSection() {
               <img
                 src={CHEF_IMAGE}
                 alt="Nuestro Chef preparando arepas"
-                className="w-full h-[500px] md:h-[600px] object-cover transition-transform duration-500 hover:scale-105"
+                className="w-full h-125 md:h-150 object-cover transition-transform duration-500 hover:scale-105"
               />
               {/* 2. Actualizado a bg-linear-to-t (Tailwind v4) */}
               <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
@@ -40,7 +40,7 @@ export default function ChefSection() {
             
             {/* Badge Flotante */}
             <motion.div
-              className="absolute top-6 -right-4 md:top-8 md:-right-6 bg-primary text-primary-foreground font-body font-bold px-5 py-3 rounded-xl shadow-lg text-sm"
+              className="absolute top-6 -right-4 md:top-8 md:-right-6 bg-(--primary) text-(--primary-foreground) font-body font-bold px-5 py-3 rounded-xl shadow-lg text-sm"
               initial={{ opacity: 0, scale: 0.7 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -58,12 +58,12 @@ export default function ChefSection() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-px bg-primary/50" />
-              <span className="font-body text-primary text-sm uppercase tracking-widest font-semibold">Nuestra historia</span>
+              <div className="w-10 h-px bg-(--primary)/50" />
+              <span className="font-body text-(--primary) text-sm uppercase tracking-widest font-semibold">Nuestra historia</span>
             </div>
 
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-tight">
-              Sabor de <span className="text-primary italic">Venezuela</span> en cada plato
+              Sabor de <span className="text-(--primary) italic">Venezuela</span> en cada plato
             </h2>
 
             <p className="font-body text-muted-foreground mt-6 text-lg leading-relaxed">
