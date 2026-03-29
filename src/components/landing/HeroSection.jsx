@@ -97,7 +97,7 @@ const BG_IMAGE = "https://media.base44.com/images/public/user_69bae9a8ecb9173375
 export default function HeroSection() {
   return (
     /* 1. Cambiamos min-h-screen por h-[80svh] en móvil */
-    <section id="inicio" className="relative h-[80svh] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative h-svh md:min-h-screen flex items-center justify-center overflow-hidden">
       
       {/* Background image */}
       <div className="absolute inset-0">
