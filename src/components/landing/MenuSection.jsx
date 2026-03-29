@@ -70,6 +70,7 @@ export default function MenuSection() {
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
               className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-(--primary)/30 transition-all duration-500"
+              
             >
               <div className="relative h-64 md:h-72 overflow-hidden">
                 <img
@@ -80,7 +81,8 @@ export default function MenuSection() {
                 <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent" />
               </div>
               <div className="p-6 md:p-8">
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-(--foreground) group-hover:text-(--primary) transition-colors duration-300">
+                <h3 className="font-heading text-2xl md:text-3xl font-bold  md:group-hover:text-(--primary) text-(--primary) md:text-(--foreground) transition-colors duration-300">
+                  
                   {item.title}
                 </h3>
                 <p className="font-body text-muted-foreground mt-3 leading-relaxed">
