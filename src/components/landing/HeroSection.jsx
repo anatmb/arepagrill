@@ -7,7 +7,7 @@ const BG_IMAGE = "https://media.base44.com/images/public/user_69bae9a8ecb9173375
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -19,7 +19,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 md:pt-24">
+      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-32 md:pt-24">
         {/* <motion.img
           src={LOGO_URL}
           alt="Arepa Grill Logo"
