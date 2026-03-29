@@ -19,7 +19,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-20">
+      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-10 md:pt-24">
         {/* <motion.img
           src={LOGO_URL}
           alt="Arepa Grill Logo"
