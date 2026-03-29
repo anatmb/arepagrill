@@ -16,7 +16,7 @@ const menuItems = [
   {
     title: 'Pollo Asado a la Brasa',
     description: 'Pollo marinado con nuestro sazón especial, asado lentamente al carbón hasta quedar jugoso y lleno de sabor. Una experiencia irresistible.',
-    image: 'https://media.base44.com/images/public/user_69bae9a8ecb9173375c4d6ff/a9f60bb19_b7e0038f65e919e4ba6883e7bba72902.jpg',
+    image: '/img/pollo.jpeg',
   },
   {
     title: 'Pinchos de Pollo',
