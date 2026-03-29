@@ -1,6 +1,7 @@
 import Navbar from '@/components/landing/Navbar';
 import HeroSection from '@/components/landing/HeroSection';
 import MenuSection from '@/components/landing/MenuSection';
+import PricesSection from '@/components/landing/PricesSection'
 import ChefSection from '@/components/landing/ChefSection';
 import GallerySection from '@/components/landing/GallerySection';
 import ContactSection from '@/components/landing/ContactSection';
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <MenuSection />
+      <PricesSection/>
       <ChefSection />
       <GallerySection />
       <ContactSection />

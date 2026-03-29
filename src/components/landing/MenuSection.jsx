@@ -105,6 +105,26 @@ export default function MenuSection() {
       <div className="max-w-7xl mx-auto">
         {/* ... Header igual ... */}
 
+          <motion.div
+           className="text-center mb-16 md:mb-20"
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: '-80px' }}
+           transition={{ duration: 0.6 }}
+         >
+           <div className="flex items-center justify-center gap-3 mb-4">
+             <div className="w-12 h-px bg-(--primary)/80" />
+             <Flame className="w-5 h-5 text-(--primary)" />
+             <div className="w-12 h-px bg-(--primary)/80" />
+           </div>
+           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-(--foreground)">
+             Nuestro <span className="text-(--primary) italic">Menú</span>
+           </h2>
+           <p className="font-body text-muted-foreground mt-4 text-lg max-w-xl mx-auto">
+             Cada plato está preparado con recetas tradicionales y los ingredientes más frescos
+           </p>
+         </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {menuItems.map((item, i) => (
             <motion.div
