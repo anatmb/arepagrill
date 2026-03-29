@@ -38,12 +38,12 @@ export default function GallerySection() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-px bg-primary/50" />
-            <Camera className="w-5 h-5 text-primary" />
-            <div className="w-12 h-px bg-primary/50" />
+            <div className="w-12 h-px bg-(--primary)/50" />
+            <Camera className="w-5 h-5 text-(--primary)" />
+            <div className="w-12 h-px bg-(--primary)/50" />
           </div>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-            Nuestra <span className="text-primary italic">Galería</span>
+            Nuestra <span className="text-(--primary) italic">Galería</span>
           </h2>
           <p className="font-body text-muted-foreground mt-4 text-lg max-w-xl mx-auto">
             Un vistazo a los sabores que preparamos con amor cada día

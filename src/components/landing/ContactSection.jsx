@@ -40,7 +40,7 @@ export default function ContactSection() {
   return (
     <section id="contacto" className="py-24 md:py-32 px-6 bg-card">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div className="grid grid-cols-1  gap-14 items-center">
           
           {/* Left: Text */}
           <motion.div
@@ -50,13 +50,13 @@ export default function ContactSection() {
             transition={{ duration: 0.7 }}
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-px bg-primary/50" />
-              <span className="font-body text-primary text-sm uppercase tracking-widest">Contáctanos</span>
+              <div className="w-10 h-px bg-(--primary)/50" />
+              <span className="font-body text-(--primary) text-sm uppercase tracking-widest">Contáctanos</span>
             </div>
 
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-tight">
               ¿Listo para{' '}
-              <span className="text-primary italic">ordenar?</span>
+              <span className="text-(--primary) italic">ordenar?</span>
             </h2>
 
             <p className="font-body text-muted-foreground mt-6 text-lg leading-relaxed">
