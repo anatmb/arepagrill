@@ -34,32 +34,77 @@ const cardVariants = {
   }),
 };
 
+// export default function MenuSection() {
+//   return (
+//     <section id="menu" className="py-24 md:py-32 px-6 bg-background">
+//       <div className="max-w-7xl mx-auto">
+//         {/* Section header */}
+//         <motion.div
+//           className="text-center mb-16 md:mb-20"
+//           initial={{ opacity: 0, y: 30 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true, margin: '-80px' }}
+//           transition={{ duration: 0.6 }}
+//         >
+//           <div className="flex items-center justify-center gap-3 mb-4">
+//             <div className="w-12 h-px bg-(--primary)/80" />
+//             <Flame className="w-5 h-5 text-(--primary)" />
+//             <div className="w-12 h-px bg-(--primary)/80" />
+//           </div>
+//           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-(--foreground)">
+//             Nuestro <span className="text-(--primary) italic">Menú</span>
+//           </h2>
+//           <p className="font-body text-muted-foreground mt-4 text-lg max-w-xl mx-auto">
+//             Cada plato está preparado con recetas tradicionales y los ingredientes más frescos
+//           </p>
+//         </motion.div>
+
+//         {/* Menu grid */}
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+//           {menuItems.map((item, i) => (
+//             <motion.div
+//               key={item.title}
+//               custom={i}
+//               variants={cardVariants}
+//               initial="hidden"
+//               whileInView="visible"
+//               viewport={{ once: true, margin: '-60px' }}
+//               className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-(--primary)/30 transition-all duration-500"
+              
+//             >
+//               <div className="relative h-64 md:h-72 overflow-hidden">
+//                 <img
+//                   src={item.image}
+//                   alt={item.title}
+//                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+//                 />
+//                 <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent" />
+//               </div>
+//               <div className="p-6 md:p-8">
+//                 <h3 className="font-heading text-2xl md:text-3xl font-bold  md:group-hover:text-(--primary) text-(--primary) md:text-(--foreground) transition-colors duration-300">
+                  
+//                   {item.title}
+//                 </h3>
+//                 <p className="font-body text-muted-foreground mt-3 leading-relaxed">
+//                   {item.description}
+//                 </p>
+//               </div>
+//               {/* Accent line */}
+//               <div className="absolute bottom-0 left-0 right-0 h-1 bg-(--primary) scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+//             </motion.div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
 export default function MenuSection() {
   return (
     <section id="menu" className="py-24 md:py-32 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
-        {/* Section header */}
-        <motion.div
-          className="text-center mb-16 md:mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-px bg-(--primary)/80" />
-            <Flame className="w-5 h-5 text-(--primary)" />
-            <div className="w-12 h-px bg-(--primary)/80" />
-          </div>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-(--foreground)">
-            Nuestro <span className="text-(--primary) italic">Menú</span>
-          </h2>
-          <p className="font-body text-muted-foreground mt-4 text-lg max-w-xl mx-auto">
-            Cada plato está preparado con recetas tradicionales y los ingredientes más frescos
-          </p>
-        </motion.div>
+        {/* ... Header igual ... */}
 
-        {/* Menu grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {menuItems.map((item, i) => (
             <motion.div
@@ -69,28 +114,38 @@ export default function MenuSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
-              className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-(--primary)/30 transition-all duration-500"
-              
+              /* NUEVO: En móvil reacciona al toque */
+              whileTap={{ scale: 0.98 }} 
+              className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-(--primary)/30 transition-all duration-500 cursor-pointer"
             >
               <div className="relative h-64 md:h-72 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  /* md:group-hover asegura que el zoom solo pase con mouse */
+                  className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent" />
               </div>
+
               <div className="p-6 md:p-8">
-                <h3 className="font-heading text-2xl md:text-3xl font-bold  md:group-hover:text-(--primary) text-(--primary) md:text-(--foreground) transition-colors duration-300">
-                  
+                {/* Mejoramos la visibilidad del color en móvil */}
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-(--primary) md:text-(--foreground) md:group-hover:text-(--primary) transition-colors duration-300">
                   {item.title}
                 </h3>
                 <p className="font-body text-muted-foreground mt-3 leading-relaxed">
                   {item.description}
                 </p>
               </div>
-              {/* Accent line */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-(--primary) scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+              {/* Accent line: En móvil la dejamos siempre visible o la animamos al entrar */}
+              <motion.div 
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 + (i * 0.1) }}
+                className="absolute bottom-0 left-0 right-0 h-1 bg-(--primary) origin-left md:scale-x-0 md:group-hover:scale-x-100 transition-transform duration-500" 
+              />
             </motion.div>
           ))}
         </div>
