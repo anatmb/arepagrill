@@ -51,7 +51,7 @@ export default function MenuSection() {
             <Flame className="w-5 h-5 text-(--primary)" />
             <div className="w-12 h-px bg-(--primary)/80" />
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-(--foreground)">
             Nuestro <span className="text-(--primary) italic">Menú</span>
           </h2>
           <p className="font-body text-muted-foreground mt-4 text-lg max-w-xl mx-auto">
@@ -80,7 +80,7 @@ export default function MenuSection() {
                 <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent" />
               </div>
               <div className="p-6 md:p-8">
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground group-hover:text-(--primary) transition-colors duration-300">
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-(--foreground) group-hover:text-(--primary) transition-colors duration-300">
                   {item.title}
                 </h3>
                 <p className="font-body text-muted-foreground mt-3 leading-relaxed">

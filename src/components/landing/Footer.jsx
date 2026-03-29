@@ -19,7 +19,7 @@ export default function Footer() {
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="font-body text-sm text-muted-foreground hover:text-primary transition-colors uppercase tracking-wider"
+                className="font-body text-sm text-muted-foreground hover:text-(--primary) transition-colors uppercase tracking-wider"
               >
                 {link}
               </a>
@@ -34,15 +34,15 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-colors group"
             >
-              <FaInstagram className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+              <FaInstagram className="w-5 h-5 text-muted-foreground group-hover:text-(--primary) transition-colors" />
             </a>
             <a
               href="https://wa.me/584120000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-colors group"
+              className="w-10 h-10 rounded-full bg-muted hover:bg-(--primary)/20 flex items-center justify-center transition-colors group"
             >
-              <MessageCircle className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+              <MessageCircle className="w-5 h-5 text-muted-foreground group-hover:text-(--primary) transition-colors" />
             </a>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Arepa Grill. Todos los derechos reservados.
           </p>
           <p className="font-body text-sm text-muted-foreground flex items-center gap-1">
-            Hecho con <Heart className="w-4 h-4 text-primary fill-primary" /> en Venezuela
+            Hecho con <Heart className="w-4 h-4 text-(--primary) fill-(--primary)" /> en Venezuela
           </p>
         </div>
       </div>

@@ -7,25 +7,25 @@ const contacts = [
   {
     icon: Phone,
     label: 'Teléfono',
-    value: '+58 412-000-0000',
-    href: 'tel:+584120000000',
+    value: '+5493777253946',
+    href: 'tel:++5493777253946',
   },
   {
     icon: MessageCircle,
     label: 'WhatsApp',
     value: 'Escríbenos aquí',
-    href: 'https://wa.me/584120000000',
+    href: 'https://wa.link/wu35f5',
   },
   {
     icon: FaInstagram,
-    label: 'FaInstagram ',
+    label: 'Instagram ',
     value: '@arepagrill',
-    href: 'https://instagram.com/arepagrill',
+    href: 'https://www.instagram.com/arepagrill.esquina/',
   },
   {
     icon: MapPin,
     label: 'Ubicación',
-    value: 'Venezuela',
+    value: 'Corriente- Esquina',
     href: '#',
   },
   {
@@ -72,13 +72,13 @@ export default function ContactSection() {
                 const content = (
                   <motion.div
                     key={item.label}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-background border border-border hover:border-primary/40 transition-all duration-300 group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-background border border-border hover:border-(--primary)/40 transition-all duration-300 group"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.5 }}
                   >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-(--primary)/20 transition-colors">
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
@@ -120,7 +120,7 @@ export default function ContactSection() {
               </p>
 
               <a
-                href="https://wa.me/584120000000"
+                href="https://wa.link/wu35f5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 w-full flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-body font-bold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg relative z-10"
@@ -130,7 +130,7 @@ export default function ContactSection() {
               </a>
 
               <a
-                href="https://instagram.com/arepagrill"
+                href="https://www.instagram.com/arepagrill.esquina/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 w-full flex items-center justify-center gap-3 bg-linear-to-t from-purple-600 to-pink-500 hover:opacity-90 text-white font-body font-bold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg relative z-10"

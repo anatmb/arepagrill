@@ -8,7 +8,7 @@ export default function ChefSection() {
 
   const stats = [
     { icon: Heart, label: 'Recetas caseras', value: '15+' },
-    { icon: Star, label: 'Años de experiencia', value: '10+' },
+    { icon: Star, label: 'Años de experiencia', value: '60+' },
     // { icon: Users, label: 'Clientes felices', value: '500+' },
     { icon: Flame, label: 'Sabor Natural', value: '100%' },
   ];
