@@ -6,12 +6,14 @@ import ChefSection from '@/components/landing/ChefSection';
 import GallerySection from '@/components/landing/GallerySection';
 import ContactSection from '@/components/landing/ContactSection';
 import Footer from '@/components/landing/Footer';
+import FoundersSection from '@/components/landing/FoundersSection'
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background font-body">
       <Navbar />
       <HeroSection />
+      <FoundersSection/>
       <MenuSection />
       <PricesSection/>
       <ChefSection />
