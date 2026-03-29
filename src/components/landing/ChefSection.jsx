@@ -22,15 +22,16 @@ export default function ChefSection() {
       {/* Columna de Imagen */}
 <motion.div
   className="relative"
-  initial={{ opacity: 0, y: 40 }}
+  /* 1. Aseguramos que los valores iniciales sean claros */
+  initial={{ opacity: 0, y: 30 }} 
   whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, margin: '-80px' }}
-  transition={{ duration: 0.7, ease: 'easeOut' }}
+  /* 2. Bajamos el margin a -20px para que la animación empiece apenas asome en pantalla */
+  viewport={{ once: true, amount: 0.2 }} 
+  transition={{ duration: 0.8, ease: 'easeOut' }}
 >
-  {/* Contenedor principal con padding para que el borde respire */}
   <div className="relative p-3"> 
     
-    {/* 1. La Imagen con su sombra */}
+    {/* Imagen con su sombra */}
     <div className="relative rounded-2xl overflow-hidden shadow-2xl z-10">
       <img
         src={CHEF_IMAGE}
@@ -40,20 +41,16 @@ export default function ChefSection() {
       <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
     </div>
     
-    {/* 2. EL BORDE CORREGIDO: 
-        - Quitamos -bottom-4 y -right-4
-        - Usamos inset-0 para que ocupe el mismo espacio que el padding del padre
-        - Mantenemos rounded-2xl para que coincida con la imagen
-    */}
+    {/* Borde decorativo - Ahora también se anima con el padre */}
     <div className="absolute inset-0 border-2 border-primary/40 rounded-2xl z-0" />
     
-    {/* Badge Flotante */}
+    {/* Badge Flotante - Tiene su propia animación que se dispara DESPUÉS del padre */}
     <motion.div
-      className="absolute top-8 -right-2 bg-primary text-primary-foreground font-body font-bold px-5 py-3 rounded-xl shadow-lg text-sm z-20"
-      initial={{ opacity: 0, scale: 0.7 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      className="absolute top-8 -right-2 bg-(--primary) text-(--primary-foreground) font-body font-bold px-5 py-3 rounded-xl shadow-lg text-sm z-20"
+      initial={{ opacity: 0, scale: 0.5, x: 20 }}
+      whileInView={{ opacity: 1, scale: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: 0.5 }}
+      transition={{ delay: 0.6, duration: 0.5, type: "spring", stiffness: 200 }}
     >
       🔥 Hecho con amor
     </motion.div>
