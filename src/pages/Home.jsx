@@ -10,7 +10,7 @@ import FoundersSection from '@/components/landing/FoundersSection'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background font-body">
+    <div className="min-h-screen bg-background font-body overflow-x-hidden relative">
       <Navbar />
       <HeroSection />
       <FoundersSection/>
