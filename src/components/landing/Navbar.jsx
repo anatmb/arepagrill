@@ -173,33 +173,54 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
+   <AnimatePresence>
+  {mobileOpen && (
+    <motion.div
+      initial={{ opacity: 0, x: '100%' }} // Entra desde la derecha
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: '100%' }}
+      transition={{ type: "spring", damping: 25, stiffness: 200 }}
+      /* Fondo negro sólido para contraste total */
+      className="fixed inset-0 w-full h-screen bg-[#050505] md:hidden flex flex-col z-40"
+    >
+      {/* Contenedor de links centrado */}
+      <div className="flex flex-col items-start justify-center h-full px-12 gap-8">
+        {navLinks.map((link, i) => (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-0 left-0 w-full h-screen bg-background/98 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8 z-40"
+            key={link.href}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 + i * 0.1 }}
+            className="w-full"
           >
-            <div className="flex flex-col items-center gap-8">
-              {navLinks.map((link, i) => (
-                <motion.a
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  key={link.href}
-                  href={link.href}
-                  className="text-2xl font-heading font-bold text-foreground hover:text-(--primary) transition-colors uppercase tracking-widest"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </motion.a>
-              ))}
-            </div>
+            <a
+              href={link.href}
+              className="group flex items-center gap-4 text-4xl font-heading font-bold text-white active:text-(--primary) transition-colors uppercase tracking-tighter"
+              onClick={() => setMobileOpen(false)}
+            >
+              {/* Número decorativo para jerarquía visual */}
+              <span className="text-xs font-body text-(--primary) opacity-50">0{i + 1}</span>
+              {link.label}
+            </a>
+            {/* Línea de acento naranja que aparece al tocar */}
+            <div className="h-[2px] w-0 bg-(--primary) group-active:w-full transition-all duration-300 mt-2" />
           </motion.div>
-        )}
-      </AnimatePresence>
+        ))}
+
+        {/* Información de contacto rápida al final del menú */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="mt-12 pt-8 border-t border-white/10 w-full"
+        >
+          <p className="text-(--primary) font-body text-xs uppercase tracking-widest mb-2">Pide ahora</p>
+          <p className="text-white/70 text-lg font-medium">Arepa Grill & Parrilla</p>
+        </motion.div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </motion.nav>
   );
 }
